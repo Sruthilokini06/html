@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E4 Validation and Styling</title>
+
+    
+    <style>
+        body {
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;  
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            cursor: pointer;               
+        }
+
+        h1 {
+            font-family: Georgia;
+            color: darkblue;
+        }
+
+        a:link {
+            color: green;
+        }
+
+        a:hover {
+            color: red;
+            font-weight: bold;
+        }
+
+        .layer {
+            position: absolute;
+            top: 80px;
+            left: 250px;
+            background-color: lightyellow;
+            padding: 20px;
+            border: 2px solid black;
+        }
+    </style>
+
+    
+    <script>
+        function validateForm() {
+            var name = document.forms["myForm"]["name"].value;
+            var password = document.forms["myForm"]["password"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var phone = document.forms["myForm"]["phone"].value;
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!/^[A-Za-z]{6,}$/.test(name)) {
+                alert("Name must contain only alphabets and minimum 6 characters");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Invalid email format");
+                return false;
+            }
+
+            if (!/^\d{10}$/.test(phone)) {
+                alert("Phone number must contain exactly 10 digits");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+
+        function showPopup() {
+            alert("This is an alert box");
+            confirm("Do you want to continue?");
+            prompt("Enter your name:");
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>User Registration Form</h1>
+
+    <div class="layer">
+        <form name="myForm" onsubmit="return validateForm()">
+            Name: <input type="text" name="name"><br><br>
+            Password: <input type="password" name="password"><br><br>
+            Email: <input type="text" name="email"><br><br>
+            Phone: <input type="text" name="phone"><br><br>
+
+            <input type="submit" value="Submit">
+            <input type="button" value="Popup Boxes" onclick="showPopup()">
+        </form>
+    </div>
+
+    <br><br><br><br><br><br>
+
+    <a href="#">Click here for more details</a>
+
+</body>
+</html>
