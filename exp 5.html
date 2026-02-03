@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Lab Program</title>
+</head>
+<body>
+
+<h2>JavaScript Lab – Basics</h2>
+
+<script>
+
+var x = 10;      
+let y = 20;       
+const z = 30;    
+
+document.write("var x = " + x + "<br>");
+document.write("let y = " + y + "<br>");
+document.write("const z = " + z + "<br><br>");
+
+
+let name = "Student";
+let msg = `Welcome ${name}, your total is ${x + y}`;
+document.write(msg + "<br><br>");
+
+function greet() {
+    document.write("Hello from Function Declaration<br><br>");
+}
+greet();
+
+
+const add = function(a, b) {
+    return a + b;
+};
+document.write("Function Expression Result: " + add(5, 3) + "<br><br>");
+
+
+function multiply(a, b = 2) {
+    return a * b;
+}
+document.write("Default Parameter Result: " + multiply(5) + "<br><br>");
+
+const square = n => n * n;
+document.write("Arrow Function (with param): " + square(4) + "<br>");
+
+
+const sayHi = () => "Hello from Arrow Function";
+document.write(sayHi() + "<br><br>");
+
+
+const show = () => document.write("This code can be compiled using Babel<br>");
+show();
+
+</script>
+
+</body>
+</html>
