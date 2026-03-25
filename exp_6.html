@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ES6 Features Demo</title>
+</head>
+<body>
+
+<h1>ES6 Features Demo</h1>
+<p>Check the console (F12) for output.</p>
+
+<script>
+    // 1️⃣ Destructure an Object
+    const person = { name: "Alice", age: 25, city: "Paris" };
+    const { name, age, city } = person;
+    console.log("Object Destructuring:", name, age, city);
+
+    // 2️⃣ Destructure an Array with element skipping
+    const numbers = [10, 20, 30, 40, 50];
+    const [first, , third, , fifth] = numbers;
+    console.log("Array Destructuring with Skipping:", first, third, fifth);
+
+    // 3️⃣ Object Literal Enhancement
+    const username = "Bob";
+    const userage = 30;
+    // Normally: { username: username, userage: userage }
+    const user = { username, userage }; // Enhanced
+    console.log("Object Literal Enhancement:", user);
+
+    // 4️⃣ Spread Operator
+    // Clone & Merge Objects
+    const obj1 = { a: 1, b: 2 };
+    const obj2 = { b: 3, c: 4 };
+    const mergedObj = { ...obj1, ...obj2 }; // b will be overwritten
+    console.log("Merged Object:", mergedObj);
+
+    // Clone & Merge Arrays
+    const arr1 = [1,2,3];
+    const arr2 = [4,5,6];
+    const mergedArr = [...arr1, ...arr2];
+    console.log("Merged Array:", mergedArr);
+
+    // Clone object
+    const clonedObj = { ...obj1 };
+    console.log("Cloned Object:", clonedObj);
+
+    // Clone array
+    const clonedArr = [...arr2];
+    console.log("Cloned Array:", clonedArr);
+</script>
+
+</body>
+</html>
